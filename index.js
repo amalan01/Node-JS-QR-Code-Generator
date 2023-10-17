@@ -4,6 +4,9 @@ const qr_code = require('qrcode');
 
 const app = express();
 
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname);
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
