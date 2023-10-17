@@ -4,10 +4,10 @@ const qr_code = require('qrcode');
 
 const app = express();
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname);
-app.set('view engine','ejs');
+// Set 'views' directory to store your view files
+app.set('views', path.join(__dirname, 'views'));
+
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
